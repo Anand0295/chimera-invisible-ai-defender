@@ -1,0 +1,24 @@
+[package]
+name = "network_forensics"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+uuid.workspace = true
+chrono.workspace = true
+
+# Network analysis (removed pcap for safety)
+trust-dns-resolver = "0.23"
+ipnetwork = "0.20"
+
+[dev-dependencies]
+tempfile = "3.8"
+serial_test = "3.0"
