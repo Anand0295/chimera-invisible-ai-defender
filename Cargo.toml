@@ -1,6 +1,7 @@
 [workspace]
 members = [
-    "stealth_loader"
+    "stealth_loader",
+    "firewall_engine"
 ]
 
 [workspace.package]
