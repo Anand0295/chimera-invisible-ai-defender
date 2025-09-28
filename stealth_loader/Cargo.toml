@@ -1,0 +1,32 @@
+[package]
+name = "stealth_loader"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+aes-gcm.workspace = true
+rand.workspace = true
+uuid.workspace = true
+chrono.workspace = true
+
+# Platform-specific dependencies
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3", features = ["winuser", "processthreadsapi", "handleapi"] }
+windows = { version = "0.52", features = ["Win32_System_Registry", "Win32_Storage_FileSystem"] }
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+nix = "0.27"
+
+[dev-dependencies]
+tempfile = "3.8"
+serial_test = "3.0"
+tracing-subscriber = "0.3"

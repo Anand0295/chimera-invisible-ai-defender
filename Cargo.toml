@@ -1,11 +1,6 @@
 [workspace]
 members = [
-    "stealth_loader",
-    "firewall_engine", 
-    "behavior_monitor",
-    "network_forensics",
-    "ddos_simulator",
-    "control_channel"
+    "stealth_loader"
 ]
 
 [workspace.package]
