@@ -15,6 +15,9 @@ grpcio-tools>=1.57.0
 protobuf>=4.24.0
 pydantic>=2.0.0
 
+# Configuration
+PyYAML>=6.0
+
 # Monitoring and Logging
 psutil>=5.9.0
 prometheus-client>=0.17.0
