@@ -1,0 +1,59 @@
+# Chimera Invisible AI Defender Configuration
+
+# Firewall Settings
+firewall:
+  enabled: true
+  mode: monitor  # monitor, block, or learn
+  rules:
+    - name: "Block suspicious IPs"
+      action: block
+      pattern: "192.168.1.*"
+    - name: "Rate limit requests"
+      action: throttle
+      max_requests: 100
+      window: 60  # seconds
+
+# Behavior Monitor Settings
+behavior_monitor:
+  enabled: true
+  interval: 5  # seconds
+  suspicious_processes:
+    - "mimikatz"
+    - "psexec"
+    - "metasploit"
+  log_file: "behavior.log"
+
+# Network Forensics Settings
+network_forensics:
+  enabled: true
+  interface: "eth0"
+  capture_duration: 300  # seconds
+  log_file: "network.log"
+  packet_filter: "tcp or udp"
+
+# Stealth Loader Settings
+stealth_loader:
+  enabled: false  # Set to true for persistence
+  service_name: "chimera-defender"
+  auto_start: false
+
+# DDoS Simulator Settings
+ddos_simulator:
+  enabled: false  # Only enable for testing
+  target_host: "localhost"
+  target_port: 8080
+  test_mode: true
+
+# Logging
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "chimera.log"
+  console: true
+
+# Alert Settings
+alerts:
+  enabled: true
+  email_notifications: false
+  webhook_url: null
+  alert_threshold: 5  # number of incidents before alerting
